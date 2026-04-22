@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Northmark Advisory CA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:       #3A8C86;
+      --primary-light: #64ADAA;
+      --primary-pale:  #BDD9D6;
+      --primary-dark:  #266460;
+      --dark:          #182830;
+      --text:          #223038;
+      --text-muted:    #5A7880;
+      --bg:            #EDF5F4;
+      --border:        rgba(58,140,134,0.18);
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--dark);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(58,140,134,0.1) 0%, transparent 55%),
+        radial-gradient(circle at 80% 20%, rgba(58,140,134,0.07) 0%, transparent 45%),
+        linear-gradient(145deg, #182830 0%, #1E3540 35%, #234848 70%, #1E3040 100%);
+      z-index: 0;
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(100,173,170,0.2);
+      border-radius: 8px;
+      padding: 3.5rem 3rem;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; filter: blur(12px); transform: translateY(24px); }
+      to   { opacity: 1; filter: blur(0);    transform: translateY(0); }
+    }
+
+    .check-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(58,140,134,0.15);
+      border: 1px solid rgba(100,173,170,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.8rem;
+    }
+
+    .check-circle svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--primary-light);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 40;
+      stroke-dashoffset: 40;
+      animation: drawCheck 0.6s ease 0.5s forwards;
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    h1 em { color: var(--primary-pale); font-style: italic; }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--primary-light);
+      margin: 0 auto 1.4rem;
+    }
+
+    .message {
+      font-size: 0.96rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.85;
+      margin-bottom: 0.8rem;
+    }
+
+    .highlight {
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--primary-light);
+      background: rgba(58,140,134,0.1);
+      border: 1px solid rgba(100,173,170,0.2);
+      border-radius: 4px;
+      padding: 0.75rem 1.2rem;
+      margin: 1.6rem 0 2rem;
+      line-height: 1.6;
+    }
+
+    .back-btn {
+      display: inline-block;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background: var(--primary);
+      padding: 0.75rem 2rem;
+      border-radius: 3px;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover { background: var(--primary-dark); }
+
+    .brand {
+      position: relative;
+      z-index: 1;
+      margin-top: 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2.5rem 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+
+    <span class="eyebrow">Message Received</span>
+
+    <h1>Thank You for<br><em>Reaching Out.</em></h1>
+
+    <div class="divider"></div>
+
+    <p class="message">
+      Your message has been successfully delivered to the Northmark Advisory CA team. We appreciate you taking the time to get in touch.
+    </p>
+
+    <div class="highlight">
+      &#10003;&nbsp; Our team will review your enquiry and get back to you <strong>within 24 hours.</strong>
+    </div>
+
+    <a href="https://northmarkadvisoryca.com" class="back-btn">Back to Website &rarr;</a>
+  </div>
+
+  <p class="brand">Northmark Advisory CA</p>
+
+</body>
+</html>
