@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northmark Advisory CA | Finance Consultant & QuickBooks Expert</title>
+  <meta name="description" content="Chartered Accountant · ACCA Finalist · QuickBooks Online Expert serving firms in the Service sector and CPA Firms across Canada and the US." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:       #3A8C86;
+      --primary-light: #64ADAA;
+      --primary-pale:  #BDD9D6;
+      --primary-dark:  #266460;
+      --dark:          #182830;
+      --mid:           #243A42;
+      --text:          #223038;
+      --text-muted:    #5A7880;
+      --bg:            #EDF5F4;
+      --bg-card:       #FFFFFF;
+      --border:        rgba(58,140,134,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    /* ─────────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 3.5rem;
+      background: rgba(237, 245, 244, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: var(--primary-dark);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-logo em { font-style: italic; color: var(--primary-light); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.8rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      background: var(--primary);
+      padding: 0.6rem 1.5rem;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    .nav-cta:hover { background: var(--primary-dark); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text-muted);
+    }
+
+    /* ─────────────────────────────────────────────
+       MOBILE MENU
+    ───────────────────────────────────────────── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--dark);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.2rem;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.3s;
+    }
+
+    .mobile-menu a:hover { color: var(--primary-light); }
+
+    .mobile-close {
+      position: absolute;
+      top: 1.4rem; right: 1.6rem;
+      font-size: 1.6rem;
+      color: rgba(255,255,255,0.4);
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* ─────────────────────────────────────────────
+       SCROLL REVEAL ANIMATION
+    ───────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      filter: blur(16px);
+      transform: translateY(28px);
+      transition: opacity 0.95s ease, filter 0.95s ease, transform 0.95s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+
+    /* ─────────────────────────────────────────────
+       SECTION 1 — HERO SPLIT
+    ───────────────────────────────────────────── */
+    #services {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 68px;
+    }
+
+    /* LEFT */
+    .hero-left {
+      background: var(--dark);
+      padding: 5.5rem 4.5rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title em { color: var(--primary-light); font-style: italic; }
+
+    .hero-sub {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.8;
+      margin-bottom: 2.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    .hero-sub strong {
+      color: rgba(255,255,255,0.65);
+      font-weight: 400;
+    }
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+
+    .industry-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(100,173,170,0.18);
+      border-radius: 4px;
+      padding: 1rem 1.1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      cursor: default;
+      transition: background 0.35s, border-color 0.35s;
+    }
+
+    .industry-card:hover {
+      background: rgba(58,140,134,0.1);
+      border-color: rgba(100,173,170,0.45);
+    }
+
+    .i-icon {
+      width: 34px; min-width: 34px; height: 34px;
+      border-radius: 50%;
+      background: rgba(100,173,170,0.12);
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .i-icon svg {
+      width: 15px; height: 15px;
+      stroke: var(--primary-light);
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .i-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.3;
+      margin-top: 1px;
+    }
+
+    .i-desc {
+      font-size: 0.7rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.36);
+      line-height: 1.5;
+      margin-top: 3px;
+    }
+
+    /* RIGHT */
+    .hero-right {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 4rem;
+      gap: 0;
+    }
+
+    .video-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 0.9rem;
+    }
+
+    .video-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+      font-weight: 400;
+      color: var(--dark);
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .video-copy {
+      font-size: 0.86rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.75;
+      max-width: 360px;
+      margin-bottom: 2.2rem;
+    }
+
+    .video-wrap {
+      width: 100%;
+      max-width: 500px;
+      aspect-ratio: 16 / 9;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1.5px solid var(--primary-pale);
+      background: var(--dark);
+    }
+
+    .video-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────────
+       SECTION 2 — ABOUT
+    ───────────────────────────────────────────── */
+    #about {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .about-bg {
+      position: absolute;
+      inset: 0;
+      /* ── REPLACE URL BELOW WITH YOUR ACTUAL PHOTO URL ── */
+      background-image: url('YOUR_PHOTO_URL_HERE.jpg');
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+      filter: brightness(0.22) saturate(0.6);
+    }
+
+    /* FALLBACK gradient if no photo set */
+    .about-bg-fallback {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #182830 0%, #1E3540 35%, #234848 70%, #1E3040 100%);
+    }
+
+    .about-overlay-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(58,140,134,0.08) 0%, transparent 55%),
+                        radial-gradient(circle at 80% 20%, rgba(58,140,134,0.06) 0%, transparent 45%);
+    }
+
+    .about-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 7rem 2.5rem;
+      text-align: center;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      padding: 0.35rem 1rem;
+      border: 1px solid rgba(100,173,170,0.3);
+      border-radius: 2px;
+      margin-bottom: 1.6rem;
+    }
+
+    .about-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .about-heading em { color: var(--primary-pale); font-style: italic; }
+
+    .divider {
+      width: 44px;
+      height: 1px;
+      background: var(--primary-light);
+      margin: 0 auto 2rem;
+    }
+
+    .about-text {
+      font-size: 0.97rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.66);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .creds-row {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 3rem;
+    }
+
+    .cred-pill {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--primary-light);
+      border: 1px solid rgba(100,173,170,0.3);
+      border-radius: 2px;
+      padding: 0.3rem 0.8rem;
+    }
+
+    .about-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: var(--primary-light);
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-top: 0.5rem;
+    }
+
+    /* ─────────────────────────────────────────────
+       SECTION 3 — TESTIMONIALS
+    ───────────────────────────────────────────── */
+    #testimonials {
+      padding: 7rem 2rem;
+      background: #fff;
+    }
+
+    .section-hdr {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-top: 0.6rem;
+    }
+
+    .section-sub {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+    }
+
+    .slider-wrap {
+      position: relative;
+      max-width: 880px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .t-slide {
+      min-width: 100%;
+      padding: 0 64px;
+    }
+
+    .t-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3rem 3.2rem;
+    }
+
+    .t-quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5.5rem;
+      line-height: 0.55;
+      color: var(--primary-pale);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .t-text {
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .t-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .t-avatar {
+      width: 46px; height: 46px; min-width: 46px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .t-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    .t-role {
+      font-size: 0.76rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .s-arrow {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .s-arrow:hover { background: var(--primary); border-color: var(--primary); }
+    .s-arrow:hover svg { stroke: #fff; }
+
+    .s-arrow svg {
+      width: 18px; height: 18px;
+      stroke: var(--text-muted);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .s-prev { left: 0; }
+    .s-next { right: 0; }
+
+    .s-dots {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 2.2rem;
+    }
+
+    .s-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--primary-pale);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .s-dot.on { background: var(--primary); transform: scale(1.35); }
+
+    /* ─────────────────────────────────────────────
+       SECTION 4 — CONTACT
+    ───────────────────────────────────────────── */
+    #contact {
+      padding: 7rem 2rem;
+      background: var(--bg);
+    }
+
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form {
+      margin-top: 2.8rem;
+    }
+
+    .f-group { margin-bottom: 1.4rem; }
+
+    .f-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .f-label .req { color: var(--primary); margin-left: 2px; }
+    .f-label .opt { font-size: 0.68rem; font-weight: 300; color: #aaa; text-transform: none; letter-spacing: 0; margin-left: 6px; }
+
+    .f-input, .f-textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      appearance: none;
+    }
+
+    .f-input::placeholder, .f-textarea::placeholder { color: #b0c4c8; }
+
+    .f-input:focus, .f-textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(58,140,134,0.09);
+    }
+
+    .f-textarea {
+      resize: vertical;
+      min-height: 150px;
+      line-height: 1.7;
+    }
+
+    .f-btn {
+      width: 100%;
+      padding: 1.05rem;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--primary);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.12s;
+      margin-top: 0.4rem;
+    }
+
+    .f-btn:hover { background: var(--primary-dark); }
+    .f-btn:active { transform: scale(0.99); }
+
+    .f-note {
+      font-size: 0.76rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.65;
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      padding: 2.2rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.76rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--primary-light); }
+
+    .footer-copy {
+      width: 100%;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 1rem;
+      margin-top: 0.4rem;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+    }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE — TABLET
+    ───────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-left { padding: 4rem 3rem 3.5rem; }
+      .hero-right { padding: 3.5rem 2.5rem; }
+    }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE — MOBILE
+    ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.4rem; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      #services {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-left {
+        padding: 4.5rem 1.6rem 3rem;
+      }
+
+      .industries-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.65rem;
+      }
+
+      .hero-right {
+        padding: 3rem 1.6rem 4rem;
+      }
+
+      .about-content {
+        padding: 5rem 1.6rem;
+      }
+
+      .about-stats { gap: 2rem; }
+
+      #testimonials { padding: 5rem 1rem; }
+
+      .t-slide { padding: 0 50px; }
+      .t-card { padding: 2rem 1.6rem; }
+
+      #contact { padding: 5rem 1.4rem; }
+
+      footer {
+        padding: 1.8rem 1.6rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-links { flex-wrap: wrap; gap: 1.2rem; }
+    }
+
+    @media (max-width: 420px) {
+      .industries-grid { grid-template-columns: 1fr; }
+      .t-slide { padding: 0 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── MOBILE MENU ── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()">&#x2715;</button>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#about"    onclick="closeMobileMenu()">About</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a>
+  <a href="#contact"  onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-logo">Northmark <em>Advisory CA</em></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Let's Talk</a>
+  <button class="hamburger" onclick="openMobileMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- ════════════════════════════════════════════
+     SECTION 1 — SERVICES / VIDEO SPLIT
+════════════════════════════════════════════ -->
+<section id="services">
+
+  <!-- LEFT: Industries -->
+  <div class="hero-left">
+    <p class="eyebrow">Specialized Finance Consulting</p>
+    <h1 class="hero-title">Precise Books.<br><em>Sharper Business Clarity.</em></h1>
+    <p class="hero-sub">
+      <strong>Chartered Accountant · ACCA Finalist · QuickBooks Expert</strong><br>
+      Serving firms in the Service sector and<br>backend office for CPA firms across Canada and the US
+    </p>
+
+    <div class="industries-grid">
+
+      <div class="industry-card">
+        <div class="i-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div>
+          <div class="i-name">Digital Marketing Agencies</div>
+          <div class="i-desc">Revenue tracking, multi-client P&Ls, cash flow clarity</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="i-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div>
+          <div class="i-name">CPA Firms</div>
+          <div class="i-desc">Overflow bookkeeping support, client-ready files</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="i-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="2"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+        </div>
+        <div>
+          <div class="i-name">Freight Brokerages</div>
+          <div class="i-desc">TMS integration, factoring reconciliation, COA setup</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="i-icon">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </div>
+        <div>
+          <div class="i-name">E-Commerce Brands</div>
+          <div class="i-desc">COGS tracking, inventory accounting, multi-channel</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="i-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <div>
+          <div class="i-name">Professional Services</div>
+          <div class="i-desc">Retainer billing, utilization reporting, expense mgmt</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="i-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div>
+          <div class="i-name">Startups &amp; Scale-ups</div>
+          <div class="i-desc">Investor-ready financials, burn rate, MRR dashboards</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT: Video -->
+  <div class="hero-right">
+    <p class="video-label">Watch &amp; Learn</p>
+    <h2 class="video-heading">A Word From<br>Your Consultant</h2>
+    <p class="video-copy">Mandeep breaks down the unique financial challenges of every industry he serves — and exactly how he solves them.</p>
+
+    <div class="video-wrap">
+      <!--
+        ╔══════════════════════════════════════════════╗
+        ║  REPLACE "YOUR_VIDEO_ID_HERE" WITH YOUR      ║
+        ║  ACTUAL YOUTUBE VIDEO ID                     ║
+        ║  Example: https://youtu.be/dQw4w9WgXcQ       ║
+        ║  Video ID = dQw4w9WgXcQ                      ║
+        ╚══════════════════════════════════════════════╝
+      -->
+      <iframe
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE?rel=0&modestbranding=1"
+        title="Mandeep Singh — Finance Consultant Introduction"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     SECTION 2 — ABOUT
+════════════════════════════════════════════ -->
+<section id="about" class="reveal">
+
+  <!--
+    ╔══════════════════════════════════════════════╗
+    ║  TO USE YOUR PHOTO:                          ║
+    ║  1. Upload your photo to GitHub repo         ║
+    ║  2. Remove the .about-bg-fallback div below  ║
+    ║  3. Uncomment the .about-bg div below it     ║
+    ║  4. Replace YOUR_PHOTO_URL with actual path  ║
+    ╚══════════════════════════════════════════════╝
+  -->
+  <div class="about-bg-fallback"></div>
+  <!-- <div class="about-bg" style="background-image: url('your-photo.jpg');"></div> -->
+  <div class="about-overlay-pattern"></div>
+
+  <div class="about-content">
+    <span class="section-eyebrow">About</span>
+    <h2 class="about-heading">CA. Analyst. <em>Your Numbers Person.</em></h2>
+    <div class="divider"></div>
+
+    <p class="about-text">
+      I'm Mandeep Singh — a Chartered Accountant and ACCA Finalist with over three years of financial reporting experience at HSBC. Today, I work as an independent finance consultant helping firms in the service sector and CPA firms across Canada and the US achieve clean books and actionable financial visibility.
+    </p>
+    <p class="about-text">
+      My edge isn't just technical — it's the ability to connect your numbers to decisions. Whether it's cleaning up years of messy books, uncovering revenue leakage, or building a monthly reporting rhythm, I work like a controller, not a bookkeeper.
+    </p>
+
+    <div class="creds-row">
+      <span class="cred-pill">Chartered Accountant</span>
+      <span class="cred-pill">ACCA Finalist</span>
+      <span class="cred-pill">QuickBooks Online</span>
+      <span class="cred-pill">HSBC · 3+ Years</span>
+      <span class="cred-pill">IFRS · Ind AS</span>
+    </div>
+
+    <div class="about-stats">
+      <div>
+        <div class="stat-num">3+</div>
+        <div class="stat-lbl">Years at HSBC</div>
+      </div>
+      <div>
+        <div class="stat-num">CA</div>
+        <div class="stat-lbl">Chartered Accountant</div>
+      </div>
+      <div>
+        <div class="stat-num">6</div>
+        <div class="stat-lbl">Industries Served</div>
+      </div>
+      <div>
+        <div class="stat-num">QBO</div>
+        <div class="stat-lbl">Certified Expert</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     SECTION 3 — TESTIMONIALS
+════════════════════════════════════════════ -->
+<section id="testimonials" class="reveal">
+  <div class="section-hdr">
+    <span class="section-eyebrow" style="color:var(--primary); border-color:rgba(58,140,134,0.2);">Client Stories</span>
+    <h2 class="section-title">What Clients Say</h2>
+    <p class="section-sub">Real results from real engagements</p>
+  </div>
+
+  <div class="slider-wrap">
+    <button class="s-arrow s-prev" id="prevBtn" aria-label="Previous testimonial">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="s-arrow s-next" id="nextBtn" aria-label="Next testimonial">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <div class="slider-track" id="sliderTrack">
+
+      <!-- ── TESTIMONIAL 1 ── -->
+      <div class="t-slide">
+        <div class="t-card">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">Mandeep cleaned up three years of our books in a matter of weeks. More importantly, he uncovered over $18,000 in uncollected receivables we didn't even know existed. That alone paid for the engagement ten times over.</p>
+          <div class="t-author">
+            <div class="t-avatar">JS</div>
+            <div>
+              <div class="t-name">James S.</div>
+              <div class="t-role">Founder, Digital Marketing Agency &mdash; Toronto, ON</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TESTIMONIAL 2 ── -->
+      <div class="t-slide">
+        <div class="t-card">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">We needed reliable support for overflow client work. Mandeep stepped in seamlessly, understood the QBO setup immediately, and delivered clean, review-ready files. He thinks like a CPA, not just a bookkeeper — that distinction matters enormously.</p>
+          <div class="t-author">
+            <div class="t-avatar">LK</div>
+            <div>
+              <div class="t-name">Lisa K.</div>
+              <div class="t-role">Partner, CPA Practice &mdash; Vancouver, BC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TESTIMONIAL 3 ── -->
+      <div class="t-slide">
+        <div class="t-card">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">Our Aljex-QBO integration was a mess when Mandeep took over. He redesigned our entire chart of accounts, fixed the factoring reconciliation, and gave us numbers we could finally trust for payroll and taxes. Project two is already underway.</p>
+          <div class="t-author">
+            <div class="t-avatar">RC</div>
+            <div>
+              <div class="t-name">Robert C.</div>
+              <div class="t-role">Owner, Freight Brokerage &mdash; Los Angeles, CA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TESTIMONIAL 4 ── -->
+      <div class="t-slide">
+        <div class="t-card">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">As an agency owner, I never truly understood my own P&amp;L. Mandeep built a monthly reporting cadence that tells me exactly where cash is going, which clients are profitable, and what decisions I need to make. It changed how I run the business.</p>
+          <div class="t-author">
+            <div class="t-avatar">AM</div>
+            <div>
+              <div class="t-name">Aisha M.</div>
+              <div class="t-role">CEO, Performance Marketing Agency &mdash; Calgary, AB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="s-dots" id="sliderDots"></div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     SECTION 4 — CONTACT
+════════════════════════════════════════════ -->
+<section id="contact" class="reveal">
+  <div class="contact-inner">
+    <div class="section-hdr">
+      <span class="section-eyebrow" style="color:var(--primary); border-color:rgba(58,140,134,0.2);">Get In Touch</span>
+      <h2 class="section-title">Let's Talk About Your Books</h2>
+      <p class="section-sub">Tell me what you're working with. I'll tell you what's possible.</p>
+    </div>
+
+    <!--
+      ╔══════════════════════════════════════════════╗
+      ║  FORMSUBMIT SETUP (free, no backend needed): ║
+      ║  1. Replace YOUR_EMAIL@gmail.com below with  ║
+      ║     your actual Gmail address                ║
+      ║  2. Submit the form ONCE — FormSubmit will   ║
+      ║     send a verification email to your Gmail  ║
+      ║  3. Click the verification link              ║
+      ║  4. All future submissions land in your inbox║
+      ║                                              ║
+      ║  Optional: Replace the _next URL with your  ║
+      ║  domain + /thank-you.html for a redirect     ║
+      ╚══════════════════════════════════════════════╝
+    -->
+    <form
+      class="contact-form"
+      action="https://formsubmit.co/YOUR_EMAIL@gmail.com"
+      method="POST"
+    >
+      <!-- FormSubmit hidden config fields -->
+      <input type="hidden" name="_captcha"  value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <!-- Remove or update the line below with your actual thank-you page URL -->
+      <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html" />
+      <!-- Honeypot spam protection -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+      <div class="f-group">
+        <label class="f-label" for="name">Your Name <span class="req">*</span></label>
+        <input class="f-input" type="text" id="name" name="name" placeholder="e.g. Sarah Johnson" required />
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="email">Email Address <span class="req">*</span></label>
+        <input class="f-input" type="email" id="email" name="email" placeholder="sarah@youragency.com" required />
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="subject">Subject <span class="req">*</span></label>
+        <input class="f-input" type="text" id="subject" name="_subject" placeholder="e.g. QBO Cleanup for My Marketing Agency" required />
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="message">Message <span class="req">*</span></label>
+        <textarea class="f-textarea" id="message" name="message" placeholder="Tell me about your business, your current accounting setup, and what you need help with..." required></textarea>
+      </div>
+
+      <div class="f-group">
+        <label class="f-label" for="whatsapp">WhatsApp Number <span class="opt">(optional)</span></label>
+        <input class="f-input" type="tel" id="whatsapp" name="whatsapp_number" placeholder="+1 416 000 0000" />
+      </div>
+
+      <button type="submit" class="f-btn">Send Message &rarr;</button>
+      <p class="f-note">Your message goes directly to my inbox. I respond within 24 hours.</p>
+    </form>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-brand">Northmark Advisory CA</div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="mailto:mandeep@northmarkadvisoryca.com">mandeep@northmarkadvisoryca.com</a></li>
+    <li><a href="https://www.upwork.com/freelancers/~YOUR_PROFILE" target="_blank" rel="noopener">Upwork</a></li>
+    <li><a href="https://www.linkedin.com/in/mandeepsingh-bhatia/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="rgba(255,255,255,0.35)" style="vertical-align:middle;transition:fill 0.3s"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
+  </ul>
+  <p class="footer-copy">
+    &copy; 2025 Northmark Advisory CA &nbsp;&middot;&nbsp; Finance Consultant &nbsp;&middot;&nbsp; Chartered Accountant &nbsp;&middot;&nbsp; ACCA Finalist &nbsp;&middot;&nbsp; QuickBooks Online Expert
+  </p>
+</footer>
+
+
+<script>
+  /* ── MOBILE MENU ── */
+  function openMobileMenu() {
+    document.getElementById('mobileMenu').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ── SCROLL REVEAL (blur → sharp) ── */
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  /* ── TESTIMONIALS SLIDER ── */
+  const track    = document.getElementById('sliderTrack');
+  const slides   = track.querySelectorAll('.t-slide');
+  const dotsEl   = document.getElementById('sliderDots');
+  const total    = slides.length;
+  let current    = 0;
+  let autoTimer;
+
+  /* Build dots */
+  slides.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 's-dot' + (i === 0 ? ' on' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(idx) {
+    current = ((idx % total) + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsEl.querySelectorAll('.s-dot').forEach((d, i) => {
+      d.classList.toggle('on', i === current);
+    });
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 6000);
+  }
+  resetAuto();
+
+  /* ── NAV ACTIVE STATE ── */
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id]');
+
+  const navObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + e.target.id
+            ? 'var(--primary)' : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => navObs.observe(s));
+</script>
+
+</body>
+</html>
